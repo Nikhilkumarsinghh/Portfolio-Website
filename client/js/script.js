@@ -1,21 +1,7 @@
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
+function showPortfolio() {
+  const intro = document.getElementById("introScreen");
+  const portfolio = document.getElementById("portfolio");
 
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value
-  };
-
-  const res = await fetch("http://localhost:5000/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(formData)
-  });
-
-  const data = await res.json();
-  alert(data.message);
-  e.target.reset();
-});
+  intro.style.display = "none";
+  portfolio.style.display = "block";
+}

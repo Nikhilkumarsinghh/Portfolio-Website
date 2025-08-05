@@ -1,19 +1,22 @@
-const express = require('express');
-const path = require('path');
+// server/index.js
+
+const express = require("express");
+const cors = require("cors");
+
 const app = express();
+const PORT = 5000;
 
-// Middleware
+app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client')));
 
-// Routes
-const formRoute = require('./routes/formRoute');
-app.use('/api/form', formRoute);
+// Contact form route
+app.post("/api/contact", (req, res) => {
+  console.log("📨 Contact form data received:", req.body);
 
-// Fallback for frontend routing
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
+  // You can add database saving or email logic here
+  res.status(200).json({ message: "Form submitted successfully!" });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on http://localhost:${PORT}`);
+});

@@ -4,58 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nikhil's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="client/css/style.css" />
 </head>
 <body>
-  <header>
-    <nav>
+
+  <!-- Intro Screen -->
+  <section id="intro-screen" class="screen center">
+    <h1 class="intro-title">Know About Me</h1>
+    <button id="know-about-me-btn" class="btn">Enter Portfolio</button>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" class="hidden">
+
+    <!-- Header -->
+    <header class="header">
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- About Me -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="./assets/images/profile.jpg" alt="Nikhil" class="profile-pic" />
+        <div class="skills">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Java, Python, C++</li>
+            <li>Node.js, Express</li>
+            <li>MongoDB, MySQL</li>
+          </ul>
+          <h3>Non-Technical Skills</h3>
+          <ul>
+            <li>Team Leadership</li>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <!-- 15 projects placeholder -->
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+        <!-- ... up to Project 15 -->
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <div class="resume-links">
+        <a href="./assets/resumes/tech_resume.pdf" download>Download Tech Resume</a>
+        <a href="./assets/resumes/non_tech_resume.pdf" download>Download Non-Tech Resume</a>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="section">
+      <h2>Achievements</h2>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>Winner - Smart India Hackathon</li>
+        <li>Top 5 in National Coding Championship</li>
+        <li>Published paper in IEEE Conference</li>
       </ul>
-    </nav>
-  </header>
+    </section>
 
-  <section id="home">
-    <h1>Hi, I'm Nikhil 👋</h1>
-    <p>A passionate Engineer and Developer</p>
-  </section>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div id="thanks-popup" class="popup hidden">Thanks for contacting us!</div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Project 1, Project 2, ...</p>
-  </section>
+  </main>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <p>Achievements details here...</p>
-  </section>
-
-  <section id="resume">
-    <h2>Download Resume</h2>
-    <a href="assets/resumes/tech_resume.pdf" download>📄 Tech Resume</a><br>
-    <a href="assets/resumes/non_tech_resume.pdf" download>📄 Non-Tech Resume</a>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a 3rd year ECE student with a passion for web development and VLSI design...</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required /><br>
-      <input type="email" name="email" placeholder="Your Email" required /><br>
-      <textarea name="message" placeholder="Your Message" required></textarea><br>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <script src="js/script.js"></script>
+  <script src="client/js/script.js"></script>
 </body>
 </html>
